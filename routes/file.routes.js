@@ -1,0 +1,20 @@
+const Router = require('express')
+const router = new Router()
+const authMiddleware = require('../middleware/auth.middleware')
+const fileController = require('../controller/fileController')
+
+router.post('', authMiddleware, fileController.createDir)
+router.post('/upload', authMiddleware, fileController.uploadFile)
+router.post('/move', authMiddleware, fileController.moveFile)
+router.post('/comment', authMiddleware, fileController.changeComment)
+router.get('', authMiddleware, fileController.getFiles)
+router.get('/download', authMiddleware, fileController.downloadFile)
+router.get('/search', authMiddleware, fileController.searchFile)
+router.get('/type', authMiddleware, fileController.searchType)
+router.delete('/', authMiddleware, fileController.deleteFile)
+router.delete('/noneEmpty', authMiddleware, fileController.deleteDirRecursive)
+router.get('/all', authMiddleware, fileController.allFiles)
+router.get('/comment', authMiddleware, fileController.getComment)
+router.get('/inspectDisk', authMiddleware, fileController.inspectDisk)
+
+module.exports = router
