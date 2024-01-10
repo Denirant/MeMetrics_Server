@@ -53,5 +53,5 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(docs));
 
 app.listen(port, () => {
   console.log(`Server is up at http://${host}:${port}`);
-  console.log('client url' + process.env.BASE_URL)
+  console.log('client url: ' + process.env.BASE_URL)
 });
