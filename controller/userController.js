@@ -1,7 +1,7 @@
 const { User, validate } = require("../model/user");
 const Token = require("../model/token");
 const Joi = require("joi");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 const sendEmail = require("../utils/sendEmail");
 const asyncHandler = require("express-async-handler");
